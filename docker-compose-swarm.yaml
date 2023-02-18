@@ -10,7 +10,7 @@ services:
         networks:
             - app-network
     db:
-        image: <username>/bgapp-db
+        image: klambov/bgapp-db
         networks:
             - app-network
         environment:
