@@ -1,6 +1,5 @@
-<?php
-   $database = "";
-   $user = "";
-   $password  = "";
-   $host = "";
-?>
+$database = "bulgaria";
+$user = "web_user";
+$password  = "Password1";
+$host = "db";
+
