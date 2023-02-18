@@ -1,0 +1,25 @@
+services:
+    web:
+        image: klambov/bgapp-web
+        deploy:
+            replicas: 5
+        ports:
+            - 8080:80
+        volumes:
+            - "/home/vagrant/klambov/web:/var/www/html:ro"
+        networks:
+            - app-network
+    db:
+        image: <username>/bgapp-db
+        networks:
+            - app-network
+        environment:
+            MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db_root_password
+        secrets:
+           - db_root_password
+secrets:
+    db_root_password:
+        external: true
+networks:
+    app-network:
+
